@@ -1,1 +1,179 @@
-body{}
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Englebert&display=swap');
+
+body{
+    text-align: center;
+    background-image: url('https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat center;
+    background-size: cover;
+
+}
+h1{
+    font-family: 'Englebert', sans-serif;
+    text-align: center;
+
+}
+#header a{
+    text-decoration: none;
+    color: white;
+}
+h2{
+    font-size: 30px;
+    font-family: 'Gotu', sans-serif;
+}
+#header{
+    text-align: center;
+}
+.container-sm{
+    background-color: white;
+    height: 720px;
+    margin: 8px;
+    width: 96%;
+    float: left;
+    border-radius: 5px;
+}
+#header h1{
+    padding: 10px 24px;
+    background-color: blueviolet;
+    color: white;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 10px;
+}
+#main h2{
+    font-size: 24px;
+
+}
+.icons{
+    float: left;
+    width: 45%;
+}
+
+#icons{
+    float: left;
+    display: block;
+    margin-right: 15px;
+    margin-left: 250px;
+}
+#ico1, #ico2, #ico3{
+    padding: 20px;
+    border-radius: 50px;
+    background-color: grey;
+    color: aliceblue;
+    padding-bottom: 20px;
+    width: 40px;
+    font-size: 20px;
+}
+#prompt{
+    float: right;
+    /* margin-right: 285px; */
+    text-align: left;
+    padding: 15px;
+    width: 50%;
+    margin-right: 7px;
+}
+#prompt h2{
+    padding-bottom: 25px;
+}
+
+#useraction{
+    width: 20%;
+    color: black;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 350px; 
+    float: right;
+
+}
+#useraction h2{
+    background-color: #6fa96c;
+    width: 195px;
+    float: left;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 24px;
+    color: aliceblue;
+}
+
+a{
+color: #000;
+}
+
+/* CARDS */
+.card-header{
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+}
+#main a{
+    background-color: #606c38;
+    color: #ffff;
+}
+.grid-container{
+    display: grid;
+    grid-template: 350px / 255px 255px 255px;
+    grid-gap: 10px;
+    padding: 10px;
+
+
+}
+.grid-container > div{
+    padding: 20px 0;
+}
+
+
+#addTask{
+    margin-left: 40%;
+    bottom: 220px;
+  }
+#addTask h2{
+    padding: 18px 45px;
+    background-color: #283618;
+    color: white;
+    text-align: center;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    float: right;
+    border-style: solid;
+    border-width: 5px;
+    
+
+  }
+
+#form{
+    text-align: center;
+    padding: 4px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+
+    }
+
+
+#newTaskForm label{
+float: left;
+font-size: 24px;
+}
+
+.btn btn-primary btn-block{
+    width: 224px;
+}
+.card-text{
+    color: #000;
+}
+/* #main h5:nth-child(odd){
+    color: aqua;
+}   */
+
+.card-title{
+    color: #bb3845;
+}
+#inProgress{
+    color: #08827c;
+}
+
+
+/* NOW THE HARD PART: MEDIA QUIRER */
