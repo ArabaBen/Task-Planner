@@ -1,103 +1,260 @@
 @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Englebert&display=swap');
-
-body{
-    text-align: center;
-    background-image: url('https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&w=600');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gotu", sans-serif;
+}
+body {
+  background-image: url('https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&w=600');
     background-repeat: no-repeat center;
     background-size: cover;
-
+	
 }
-h1{
-    font-family: 'Englebert', sans-serif;
-    text-align: center;
-
+#date{
+	text-align: center;
 }
-#header a{
-    text-decoration: none;
-    color: white;
+.container {
+  width: 90vw;
+  max-width: 62.5em;
+  position: relative;
+  margin: auto;
 }
-h2{
-    font-size: 30px;
-    font-family: 'Gotu', sans-serif;
+.add-flashcard-con {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.2em 1em;
 }
-#header{
-    text-align: center;
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-.container-sm{
-    background-color: white;
-    height: 720px;
-    margin: 8px;
-    width: 96%;
-    float: left;
-    border-radius: 5px;
+.add-flashcard-con button {
+  font-size: 1em;
+  background-color: #4b7d82;
+  color: #ffffff;
+  padding: 0.8em 1.2em;
+  font-weight: 500;
+  border-radius: 0.4em;
 }
-#header h1{
-    padding: 10px 24px;
-    background-color: blueviolet;
-    color: white;
-    margin-left: 35%;
-    margin-right: 35%;
-    border-radius: 10px;
+#card-con {
+  margin-top: 1em;
 }
-#main h2{
-    font-size: 24px;
-
+.question-container {
+  width: 90vw;
+  max-width: 34em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 3em 2em;
+  border-radius: 0.6em;
+  box-shadow: 0 1em 2em rgba(28, 0, 80, 0.1);
 }
-.icons{
-    float: left;
-    width: 45%;
+.question-container h2 {
+  font-size: 2.2em;
+  color: #4b6350;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2em;
 }
-
-#icons{
-    float: left;
-    display: block;
-    margin-right: 15px;
-    margin-left: 250px;
-}
-#ico1, #ico2, #ico3{
-    padding: 20px;
-    border-radius: 50px;
-    background-color: grey;
-    color: aliceblue;
-    padding-bottom: 20px;
-    width: 40px;
-    font-size: 20px;
-}
-#prompt{
-    float: right;
-    /* margin-right: 285px; */
-    text-align: left;
-    padding: 15px;
-    width: 50%;
-    margin-right: 7px;
-}
-#prompt h2{
-    padding-bottom: 25px;
+.wrapper {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
-#useraction{
-    width: 20%;
-    color: black;
-    padding-left: 100px;
-    padding-right: 100px;
-    height: 350px; 
-    float: right;
-
+/*ERROR IF INPUT LEFT EMPTY*/
+.error-con {
+  align-self: center;
 }
-#useraction h2{
-    background-color: #6fa96c;
-    width: 195px;
-    float: left;
-    padding: 15px 25px;
-    border-radius: 10px;
-    font-size: 24px;
-    color: aliceblue;
+#error {
+  color: #e6580b;
+  font-weight: 400;
 }
 
-a{
-color: #000;
+/*X-ICON TO EXIT*/
+.fa-xmark {
+  font-size: 1.4em;
+  background-color: #211f20;
+  height: 1.8em;
+  width: 1.8em;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: flex-end;
 }
+
+/*FORMS SETTINGS*/
+label {
+  color: #363d55;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+textarea {
+  width: 100%;
+  padding: 0.7em 0.5em;
+  border: 1px solid #d0d0d0;
+  outline: none;
+  color: #414a67;
+  border-radius: 0.3em;
+  resize: none;
+}
+textarea:not(:last-child) {
+  margin-bottom: 1.2em;
+}
+textarea:focus {
+  border-color: #363d55;
+}
+#save-btn {
+  font-size: 1em;
+  background-color: #84b559;
+  color: #ffffff;
+  padding: 0.6em 0;
+  border-radius: 0.3em;
+  font-weight: 600;
+}
+.card-list-container {
+  display: grid;
+  padding: 0.2em;
+  gap: 1.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 0.4em 1.2em rgba(28, 0, 80, 0.08);
+  padding: 1.2em;
+  border-radius: 0.4em;
+}
+.question-div,
+.answer-div {
+  text-align: justify;
+}
+.question-div {
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #363d55;
+}
+.answer-div {
+  margin-top: 1em;
+  font-weight: 400;
+  color: #414a67;
+}
+
+/* SHOW OR HIDE FULL TASKS */
+.show-hide-btn {
+  display: block;
+  background-color: #84b559;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.6em 0;
+  border-radius: 0.3em;
+}
+.buttons-con {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* DELETE OR EDIT BUTTONS*/
+.edit,
+.delete {
+  background-color: transparent;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+.edit {
+  color: #84b559;
+}
+.delete {
+  color: #e6580b;
+}
+.hide {
+  display: none;
+}
+
+/* PREVIOUSLY EXISTING COMPLETED TASKS*/
+h3{
+	background-color: whitesmoke;
+	width: 400px;
+	height: 50px;
+	border-radius: 0.4em;
+	padding: 5px;
+	padding-top: 10px;
+	text-align: center;
+}
+
+h4{
+	color: #6fa96c;
+	font-family: 'gotu', sans-serif;
+}
+.OLDcontainer{
+	padding: 30px;
+	text-align: center;
+
+}
+#OLDcard{
+	width: 346px;
+	margin: 15px;
+}
+
+/*NAVIGATION BUTTONS*/
+.launchNewCard{
+	width: 100%;
+	padding: 1pc;
+	margin-bottom: 100px;
+}
+.launchNewCard h5{
+	background-color: #e8861e;
+	padding: 10px 10px;
+	margin-left: 185px;
+	margin-right: 185px;
+	text-align: center;
+	font-size: 20px;
+	border: 6px solid #f5ecdf;
+	border-radius: 10px;
+	width: 25%;
+	float: right;
+	margin: 5px;
+
+
+}
+.launchNewCard a{
+	text-decoration: none;
+	color: #ffffff;
+	margin: 5px;
+
+}
+.launchNewCard a:hover{
+	color: #000000;
+}
+
+.material-symbols-outlined{
+	font-size: 96px;
+}
+
+
+.box{
+	background-color: aliceblue;
+	padding: 15px;
+	margin: 15px;
+	width: 18rem;
+}
+#box, .box{
+	text-align: center;
+	border-radius: 10px;
+}
+
+/*  Commented section
 
 /* CARDS */
 .card-header{
@@ -166,14 +323,33 @@ font-size: 24px;
 }
 /* #main h5:nth-child(odd){
     color: aqua;
-}   */
+}  
+
+*/
 
 .card-title{
     color: #bb3845;
 }
 #inProgress{
     color: #08827c;
-}
+} 
+*/
 
 
 /* NOW THE HARD PART: MEDIA QUIRER */
+/*RESPONSIVENESS BASED ON SCREENS */
+@media screen and (max-width: 800px) {
+  .card-list-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+  }
+}
+@media screen and (max-width: 450px) {
+  body {
+    font-size: 14px;
+  }
+  .card-list-container {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+}
