@@ -6,6 +6,7 @@ This repository consists of working and completed files/versions of the final pr
 You will find a wireframe + stylesheet and an READHTML/CSS/JavaScript files.
 
 The goal is to create a web app: "task planner" that is mobile first, responsive, and interactive.
+
 Live site demo : https://arababen.github.io/Task-Planner/ 
 
 -Araba
