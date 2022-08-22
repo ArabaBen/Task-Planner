@@ -16,5 +16,67 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     </head>           
-    </body>
+    <body>
+	  <p id="date"></p>
+	
+	 
+	   <!-- CODE STARTS HERE W/ CONTAINER-->
+		<div class="container">
+		  <div class="add-flashcard-con">
+			<button id="add-flashcard">Add Tasky</button>
+		  </div>
+
+		<!-- CARD DISPLAY: Each card input will be displayed  -->
+		  <div id="card-con">
+			<div class="card-list-container"></div>
+		  </div>
+		</div>
+
+	   <!-- FORMS FOR CARDS: inputs users used to fill for task title, descriptions, and due dates... *i don't want to do an assigned to for this* -->
+		<div class="question-container hide" id="add-question-card">
+		  <h2>NEW TASKY</h2>
+			  <div class="wrapper">
+		<!-- ERROR, NO INPUTS CAN BE EMPTY BC ALL FEILDS ARE REQUIRED. -->
+				<div class="error-con">
+				  <span class="hide" id="error">Input fields cannot be empty!</span>
+				</div>
+		<!-- CLOSE TASK FORM -->
+				<i class="fa-solid fa-xmark" id="close-btn"></i>
+			  </div>
+		<!-- TASK FORMS-->
+			<label for="question">Title:</label>
+			<textarea class="input" id="question" placeholder="water plants..." rows="2" required></textarea>
+
+			<label for="answer">Description:</label>
+			<textarea class="input" id="answer" rows="4" placeholder="Only use tap water when..." required></textarea>
+			
+			<label for="due">Due:</label>
+			<textarea class="input" id="due" rows="1" placeholder="ex: Aug 10th @ 2pm..." required></textarea>
+
+
+		  <button id="save-btn">Save Tasky</button>
+		</div>
+
+	<!-- PREVIOUSLY EXISTING TASKS THAT CANNOT BE DELETED FROM APP-->
+		 <div class="OLDcontainer">
+			 <div class="row g-3">
+				 <h3>GREAT JOB GETTING A TASK DONE:</h3>
+			<div class="col-12 col-md-6 col-lg-4">
+					<div class="card" id="OLDcard">
+					  <div class="card-header">Prep Paperwork &#128195;</div>
+						<div class="card-footer">
+							<small class="text-muted"> 5:30pm Friday Aug 19th</small></div>
+						<div class="card-body">
+							<h4 class="card-title">COMPLETED</h4>
+							<p class="card-text">prepare all math files for mathlete meeting on Friday </p>
+						</div>
+					</div>
+				 </div>
+			 </div>
+		  </div>
+	  
+
+ <!-- JAVAScript LINK -->
+    <script src="index.js"></script>
+  </body>
 </html>
