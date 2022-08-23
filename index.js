@@ -2,36 +2,32 @@
 const d = new Date();
 document.getElementById("date").innerHTML = d.toDateString();
 
+
 //DECLARING AND SETTING CONSTANTS 
 const container = document.querySelector(".container");
-const addTaskCard = document.getElementById("add-Task-card");
+const addQuestionCard = document.getElementById("add-question-card");
 const cardButton = document.getElementById("save-btn");
-const task = document.getElementById("task");
-const description = document.getElementById("description");
-const due = document.getElementById("due");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
 const errorMessage = document.getElementById("error");
-const addTask = document.getElementById("add-taskcard");
+const addQuestion = document.getElementById("add-flashcard");
 const closeBtn = document.getElementById("close-btn");
 let editBool = false;
 
-//ADDING A CARD FOR TASK WHEN USER CLICKS ADD
-/* getting stuck on using add eventlistener for task 4/5.
-using "Document.querySelector() or EventTarget.addEventListener() to be able to add or hide elemnts of user inputs. 
-sinice no  lists were used bc thier too long & complicated for me to keep track with: don't use array lists to pop(), push() to remove/delete.
----add new if else logic*/ 
-addTask.addEventListener("click", () => {
+//ADDING A CARD FOR TASK WHEN USER CLICKS ADD 
+addQuestion.addEventListener("click", () => {
   container.classList.add("hide");
-  task.value = "";
-  description.value = "";
-  addTaskCard.classList.remove("hide");
+  question.value = "";
+  answer.value = "";
+  addQuestionCard.classList.remove("hide");
 });
 
 //HIDE ADDING TASK CARD 
 closeBtn.addEventListener(
   "click",
-  (hideTask = () => {
+  (hideQuestion = () => {
     container.classList.remove("hide");
-    addTaskCard.classList.add("hide");
+    addQuestionCard.classList.add("hide");
     if (editBool) {
       editBool = false;
       submitQuestion();
@@ -44,9 +40,9 @@ cardButton.addEventListener(
   "click",
   (submitQuestion = () => {
     editBool = false;
-    tempTask = question.value.trim();
+    tempQuestion = question.value.trim();
     tempAnswer = answer.value.trim();
-    if (!tempQuestion || !tempAnswer || !tempDue) {
+    if (!tempQuestion || !tempAnswer) {
       errorMessage.classList.remove("hide");
     } else {
       container.classList.remove("hide");
@@ -63,84 +59,22 @@ function viewlist() {
   var listCard = document.getElementsByClassName("card-list-container");
   var div = document.createElement("div");
   div.classList.add("card");
-//TITLES
+  //Question
   div.innerHTML += `
-  <p class="task-div">${question.value}</p>`;
-//ANSWERS/DESCRIPTIONS/DUE DATES INPUTS
-  var displayDescription = document.createElement("p");
+  <p class="question-div">${question.value}</p>`;
+  //Answer
+  var displayAnswer = document.createElement("p");
   displayAnswer.classList.add("answer-div", "hide");
   displayAnswer.innerText = answer.value;
-//DUE DATE
-	
 
-
-/*/document.getElementById("myBtn").addEventListener("click", displayAdded);
-//
-//function displayAdded() {
-//     
-//}
-
-
-
-//
-////PICKING ELETEMENTS
-//const clear = document.querySelector(".clear");
-//const dataElement = document.getElementById("date");
-//const list = document.getElementById("list");
-//const input = document.getElementById("input");
-//
-//
-//
-////SETTING CLASSES TO CONST "THIS  = THIS"
-//const DONE = "btn btn-primary";
-//const LINE_THROUGH = "lineThrough";
-//*/
-  //DELETE A TASK - SAVED
-  var deleteButton = document.createElement("button");
-  deleteButton.setAttribute("class", "delete");
-  deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
-  deleteButton.addEventListener("click", () => {
-    modifyElement(deleteButton);
+  //Link to SHOW OR HIDE TASK 
+  var link = document.createElement("a");
+  link.setAttribute("href", "#");
+  link.setAttribute("class", "show-hide-btn");
+  link.innerHTML = "Show full task";
+  link.addEventListener("click", () => {
+    displayAnswer.classList.toggle("hide");
   });
-  buttonsCon.appendChild(deleteButton);
 
-  div.appendChild(buttonsCon);
-  listCard[0].appendChild(div);
-  hideQuestion();
-}
-
-//CHANGE INPUTS SAVED
-	/* using query selectors resourcses from task6 to allow users to edit or delte/hide thier submited tasks at any point*/
-const modifyElement = (element, edit = false) => {
-  let parentDiv = element.parentElement.parentElement;
-  let parentQuestion = parentDiv.querySelector(".question-div").innerText;
-  if (edit) {
-    let parentAns = parentDiv.querySelector(".answer-div").innerText;
-    answer.value = parentAns;
-    question.value = parentQuestion;
-    disableButtons(true);
-  }
-  parentDiv.remove();
-};
-
-//DEL SAVED /EDIT MODIFYER
-const disableButtons = (value) => {
-  let editButtons = document.getElementsByClassName("edit");
-  Array.from(editButtons).forEach((element) => {
-    element.disabled = value;
-  });
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  div.appendChild(link);
+  div.appendChild(displayAnswer);
