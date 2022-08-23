@@ -7,6 +7,6 @@ You will find a wireframe + stylesheet and HTML/CSS/JavaScript files.
 
 The goal is to create a web app: "task planner" that is mobile first, responsive, and interactive.
 
-Live site demo : https://arababen.github.io/Task-Planner/ 
+Live site demo : https://arababen.github.io/Task-Planner/ (open in incognito) 
 
 -Araba
