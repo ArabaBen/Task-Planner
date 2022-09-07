@@ -107,6 +107,7 @@ function viewlist() {
   hideQuestion();
 }
 
+/*
 //MARK TASK AS COMPLETE
 var markDone = document.createElement("button");
 markDone.setAttribute("class", "null");
@@ -117,7 +118,7 @@ markDone.addEventListener("click", () => {
 buttonsCon.appendChild(markDone);
 div.appendChild(buttonCon);
 hideQuestion();
-
+*/
 
 
 
