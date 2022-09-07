@@ -10,7 +10,7 @@
 body {
 	padding: 2px;
 	  background-image: url('https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-repeat: no-repeat center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 #date{
@@ -124,7 +124,7 @@ textarea:focus {
   padding: 0.2em;
   gap: 1.5em;
   grid-template-columns: 1fr 1fr 1fr;
-}
+}                                                                                                                
 .card {
   background-color: #ffffff;
   box-shadow: 0 0.4em 1.2em rgba(28, 0, 80, 0.08);
@@ -147,8 +147,8 @@ textarea:focus {
 }
 .show-hide-btn {
   display: block;
-  background-color: #587ef4;
-  color: #ffffff;
+  background-color: #f4c858;
+  color: #000;
   text-decoration: none;
   text-align: center;
   padding: 0.6em 0;
@@ -165,7 +165,7 @@ textarea:focus {
   font-size: 1.2em;
 }
 .edit {
-  color: #587ef4;
+  color: #529c4e;
 }
 .delete {
   color: #ff5353;
